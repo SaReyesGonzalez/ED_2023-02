@@ -31,6 +31,7 @@ public:
 
     //virtual void agregarSoftware() = 0;
     //virtual void eliminarSoftware() = 0;
+    //virtual void verificarAcceso()
 };
 
 
