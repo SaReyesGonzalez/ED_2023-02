@@ -10,6 +10,20 @@
 
 using namespace std;
 
+const int CANTIDAD_USUARIOS = 15;
+
+int login(Usuario* arrayUsers[CANTIDAD_USUARIOS]);
+char interfazUsuario();
+void agregarSoftware(unordered_map<int,Juego*> game,unordered_map<int,Ofimatica*> ofi,unordered_map<int,Produccion*> prod,unordered_map<int,Navegador*> nav,unordered_map<int,Seguridad*> seg,unordered_map<int,Social*> soc);
+void interfazBiblioteca(unordered_map<int,Juego*> game,unordered_map<int,Ofimatica*> ofi,unordered_map<int,Produccion*> prod,unordered_map<int,Navegador*> nav,unordered_map<int,Seguridad*> seg,unordered_map<int,Social*> soc);
+void interfazJuegos(unordered_map<int,Juego*> games);
+void interfazOfimatica(unordered_map<int,Ofimatica*> ofi);
+void interfazProduccion(unordered_map<int,Produccion*> prod);
+void interfazNavegador(unordered_map<int,Navegador*> nav);
+void interfazSeguridad(unordered_map<int,Seguridad*> seg);
+void interfazSocial(unordered_map<int,Social*> soc);
+
+
 int main() {
 
     // Condicion 1 (15 usuarios)
@@ -89,78 +103,425 @@ int main() {
 
     //##################################################################################################################
 
+    // Array usuarios
+    Usuario* arrayUsers[CANTIDAD_USUARIOS];
+    arrayUsers[0] = admin;
+    arrayUsers[1] = kid1;
+    arrayUsers[2] = kid2;
+    arrayUsers[3] = kid3;
+    arrayUsers[4] = kid4;
+    arrayUsers[5] = user1;
+    arrayUsers[6] = user2;
+    arrayUsers[7] = user3;
+    arrayUsers[8] = user4;
+    arrayUsers[9] = user5;
+    arrayUsers[10] = user6;
+    arrayUsers[11] = user7;
+    arrayUsers[12] = user8;
+    arrayUsers[13] = user9;
+    arrayUsers[14] = user10;
+
     // Creacion hashmaps
-    unordered_map<int,unordered_map<int,Software*>> hashmap;
-    unordered_map<int,Software*> mapaJuegos;
-    unordered_map<int,Software*> mapaOfimatica;
-    unordered_map<int,Software*> mapaProduccion;
-    unordered_map<int,Software*> mapaNavegador;
-    unordered_map<int,Software*> mapaSeguridad;
-    unordered_map<int,Software*> mapaSocial;
+    unordered_map<int,Juego*> mapaJuegos;
+    unordered_map<int,Ofimatica*> mapaOfimatica;
+    unordered_map<int,Produccion*> mapaProduccion;
+    unordered_map<int,Navegador*> mapaNavegador;
+    unordered_map<int,Seguridad*> mapaSeguridad;
+    unordered_map<int,Social*> mapaSocial;
 
     // Añadir juegos a su hashmap
-    mapaJuegos[0] = game1;
-    mapaJuegos[1] = game2;
-    mapaJuegos[2] = game3;
-    mapaJuegos[3] = game4;
-    mapaJuegos[4] = game5;
-    mapaJuegos[5] = game6;
-    mapaJuegos[6] = game7;
-    mapaJuegos[7] = game8;
-    mapaJuegos[8] = game9;
-    mapaJuegos[9] = game10;
-    mapaJuegos[10] = game11;
-    mapaJuegos[11] = game12;
-    mapaJuegos[12] = game13;
-    mapaJuegos[13] = game14;
-    mapaJuegos[14] = game15;
-    mapaJuegos[15] = game16;
-    mapaJuegos[16] = game17;
-    mapaJuegos[17] = game18;
-    mapaJuegos[18] = game19;
-    mapaJuegos[19] = game20;
+    mapaJuegos[0] = static_cast<Juego*>(game1);
+    mapaJuegos[1] = static_cast<Juego*>(game2);
+    mapaJuegos[2] = static_cast<Juego*>(game3);
+    mapaJuegos[3] = static_cast<Juego*>(game4);
+    mapaJuegos[4] = static_cast<Juego*>(game5);
+    mapaJuegos[5] = static_cast<Juego*>(game6);
+    mapaJuegos[6] = static_cast<Juego*>(game7);
+    mapaJuegos[7] = static_cast<Juego*>(game8);
+    mapaJuegos[8] = static_cast<Juego*>(game9);
+    mapaJuegos[9] = static_cast<Juego*>(game10);
+    mapaJuegos[10] = static_cast<Juego*>(game11);
+    mapaJuegos[11] = static_cast<Juego*>(game12);
+    mapaJuegos[12] = static_cast<Juego*>(game13);
+    mapaJuegos[13] = static_cast<Juego*>(game14);
+    mapaJuegos[14] = static_cast<Juego*>(game15);
+    mapaJuegos[15] = static_cast<Juego*>(game16);
+    mapaJuegos[16] = static_cast<Juego*>(game17);
+    mapaJuegos[17] = static_cast<Juego*>(game18);
+    mapaJuegos[18] = static_cast<Juego*>(game19);
+    mapaJuegos[19] = static_cast<Juego*>(game20);
+
 
     // Añadir ofimatica a su hashmap
-    mapaOfimatica[0] = ofi1;
-    mapaOfimatica[1] = ofi2;
-    mapaOfimatica[2] = ofi3;
-    mapaOfimatica[3] = ofi4;
-    mapaOfimatica[4] = ofi5;
+    mapaOfimatica[0] = static_cast<Ofimatica*>(ofi1);
+    mapaOfimatica[1] = static_cast<Ofimatica*>(ofi2);
+    mapaOfimatica[2] = static_cast<Ofimatica*>(ofi3);
+    mapaOfimatica[3] = static_cast<Ofimatica*>(ofi4);
+    mapaOfimatica[4] = static_cast<Ofimatica*>(ofi5);
 
     // Añadir produccion a su hashmap
-    mapaProduccion[0] = prod1;
-    mapaProduccion[1] = prod2;
-    mapaProduccion[2] = prod3;
-    mapaProduccion[3] = prod4;
+    mapaProduccion[0] = static_cast<Produccion*>(prod1);
+    mapaProduccion[1] = static_cast<Produccion*>(prod2);
+    mapaProduccion[2] = static_cast<Produccion*>(prod3);
+    mapaProduccion[3] = static_cast<Produccion*>(prod4);
 
     // Añadir navegadores a su hashmap
-    mapaNavegador[0] = nav1;
-    mapaNavegador[1] = nav2;
+    mapaNavegador[0] = static_cast<Navegador*>(nav1);
+    mapaNavegador[1] = static_cast<Navegador*>(nav2);
 
     // Añadir seguridad a su hashmap
-    mapaSeguridad[0] = seg1;
-    mapaSeguridad[2] = seg2;
-    mapaSeguridad[3] = seg3;
-    mapaSeguridad[4] = seg4;
-    mapaSeguridad[5] = seg5;
-    mapaSeguridad[6] = seg6;
+    mapaSeguridad[0] = static_cast<Seguridad*>(seg1);
+    mapaSeguridad[2] = static_cast<Seguridad*>(seg2);
+    mapaSeguridad[3] = static_cast<Seguridad*>(seg3);
+    mapaSeguridad[4] = static_cast<Seguridad*>(seg4);
+    mapaSeguridad[5] = static_cast<Seguridad*>(seg5);
+    mapaSeguridad[6] = static_cast<Seguridad*>(seg6);
 
-    // Añadir sociales a su hashmap
-    mapaSocial[0] = social1;
-    mapaSocial[1] = social2;
-
-    // Añadir todos los hashmaps de los distintos tipos de software a un hashmap general
-    hashmap[0] = mapaJuegos;
-    hashmap[1] = mapaOfimatica;
-    hashmap[2] = mapaProduccion;
-    hashmap[3] = mapaNavegador;
-    hashmap[4] = mapaSeguridad;
-    hashmap[5] = mapaSocial;
-
+// Añadir sociales a su hashmap
+    mapaSocial[0] = static_cast<Social*>(social1);
+    mapaSocial[1] = static_cast<Social*>(social2);
 
     //##################################################################################################################
 
+    bool userFlag = true;
+    char userOpt;
+    char softwareOpt;
 
+    int userIndex = login(arrayUsers);
 
+    while (userIndex == -1)
+    {
+        cout << "\nError: El usuario y/o la contraseña no existen.\n" << endl;
+        userIndex = login(arrayUsers);
+    }
+
+    cout << "Bienvenido " << arrayUsers[userIndex]->getNombre() << "!" << endl;
+
+    userOpt = interfazUsuario();
+
+    while (userFlag)
+    {
+        switch (userOpt)
+        {
+            case 'a':
+                agregarSoftware(mapaJuegos,mapaOfimatica,mapaProduccion,mapaNavegador,mapaSeguridad,mapaSocial);
+                break;
+
+            case 'b':
+                //eliminarSoftware();
+                break;
+
+            case 'c':
+                interfazBiblioteca(mapaJuegos,mapaOfimatica,mapaProduccion,mapaNavegador,mapaSeguridad,mapaSocial);
+                break;
+
+            case 'd':
+                userFlag = false;
+                break;
+
+            default:
+                cout << "Seleccione una opcion valida." << endl;
+                userOpt = interfazUsuario();
+        }
+    }
+
+    cout << "\nFinalizando programa." << endl;
+    return 0;
 
 }
+
+
+int login(Usuario* arrayUsers[CANTIDAD_USUARIOS])
+{
+    string usuario;
+    string password;
+
+    cout << "Ingrese su nombre: ";
+    cin >> usuario;
+
+    cout << "Ingrese su contraseña: ";
+    cin >> password;
+
+    for (int i = 0 ; i < CANTIDAD_USUARIOS ; i++)
+    {
+        if (arrayUsers[i]->getNombre() == usuario && arrayUsers[i]->getPassword() == password) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+char interfazUsuario()
+{
+    char opcion;
+    cout<<"\na. Agregar software "<<endl;
+    cout<<"b. Eliminar software "<<endl;
+    cout<<"c. Biblioteca de software"<<endl;
+    cout<<"d. Salir" <<endl;
+    cout<<"Seleccione una opcion: ";
+    cin>>opcion;
+    return opcion;
+}
+
+
+void agregarSoftware(unordered_map<int,Juego*> game, unordered_map<int,Ofimatica*> ofi, unordered_map<int,Produccion*> prod, unordered_map<int,Navegador*> nav, unordered_map<int,Seguridad*> seg, unordered_map<int,Social*> soc)
+{
+    char opt;
+
+    string nombre;
+    string dev;
+    string pg;
+    int precio;
+    string genero;
+    string tipo;
+    Software* software;
+
+    cout<<"\nSeleccione el tipo de software que desea agregar"<<endl;
+    cout<<"a. Juego"<<endl;
+    cout<<"b. Ofimatica"<<endl;
+    cout<<"c. Produccion"<<endl;
+    cout<<"d. Navegador"<<endl;
+    cout<<"e. Seguridad"<<endl;
+    cout<<"f. Social"<<endl;
+    cin >> opt;
+
+    switch (opt)
+    {
+        case 'a': // JUEGOS
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            cout <<"ingrese el genero: ";
+            cin >> genero;
+
+            software = new Juego(nombre,dev,pg,precio,genero);
+
+            game[game.size()] = static_cast<Juego *>(software);
+
+            break;
+
+        case 'b': // OFIMATICA
+
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            software = new Ofimatica(nombre,dev,pg,precio,0);
+
+            ofi[ofi.size()] = static_cast<Ofimatica *>(software);
+
+            break;
+
+        case 'c': // PRODUCCION
+
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            cout <<"ingrese el tipo: ";
+            cin >> tipo;
+
+            software = new Produccion(nombre,dev,pg,precio,tipo);
+
+            prod[prod.size()] = static_cast<Produccion *>(software);
+
+            break;
+
+        case 'd': // NAVEGADOR
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            cout <<"ingrese el genero: ";
+            cin >> genero;
+
+            software = new Navegador(nombre,dev,pg,precio);
+
+            nav[nav.size()] = static_cast<Navegador *>(software);
+
+            break;
+
+            case 'e': // SEGURIDAD
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            cout <<"ingrese el tipo: ";
+            cin >> tipo;
+
+            software = new Seguridad(nombre,dev,pg,precio,tipo);
+
+            seg[seg.size()] = static_cast<Seguridad *>(software);
+            break;
+
+        case 'f': // SOCIAl
+            cout << "Ingrese el nombre: ";
+            cin >> nombre;
+
+            cout << "Ingrese el developer: ";
+            cin >> dev;
+
+            cout << "Ingrese el pg (E/T/M): ";
+            cin >> pg;
+
+            if (pg != "E" && pg != "T" && pg != "M")
+            {
+                cout << "Invalido." << endl;
+                break;
+            }
+
+            cout << "Ingrese el precio: ";
+            cin >> precio;
+
+            software = new Social(nombre,dev,pg,precio);
+
+            soc[soc.size()] = static_cast<Social *>(software);
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+    }
+}
+
+
+void interfazBiblioteca(unordered_map<int,Juego*> game, unordered_map<int,Ofimatica*> ofi, unordered_map<int,Produccion*> prod, unordered_map<int,Navegador*> nav, unordered_map<int,Seguridad*> seg, unordered_map<int,Social*> soc)
+{
+    char opt;
+    cout<<"\na. JUEGOS "<<endl;
+    cout<<"b. OFIMATICA "<<endl;
+    cout<<"c. PRODUCCION"<<endl;
+    cout<<"d. NAVEGADOR"<<endl;
+    cout<<"e. SEGURIDAD"<<endl;
+    cout<<"f. SOCIAL"<<endl;
+    cin>>opt;
+
+    switch (opt)
+    {
+        case 'a': // JUEGOS
+            interfazJuegos(game);
+
+            break;
+
+        case 'b': // OFIMATICA
+            //interfazOfimatica(ofi);
+
+            break;
+
+        case 'c': // PRODUCCION
+
+
+            break;
+
+        case 'd': // NAVEGADOR
+
+
+            break;
+
+        case 'e': // SEGURIDAD
+
+            break;
+
+        case 'f': // SOCIAl
+
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+    }
+}
+
+
+bool confirmarPermiso() {}
+
+
+void interfazJuegos(unordered_map<int,Juego*> games)
+{
+    cout << "\nMostrar todos los generos: " <<endl;
+
+    string genero = games.at(0)->getGenero();
+
+    for (int i = 0 ; i < games.size() ; i++)
+    {
+        if (games.at(i)->getGenero() == genero)
+        {
+
+        }
+
+    }
+}
+
+
+

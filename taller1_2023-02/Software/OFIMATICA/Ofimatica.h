@@ -10,6 +10,7 @@ private:
 public:
     Ofimatica(string nombre, string dev, string pg, int precio, int cantArch);
     int getCantArch();
+    void crearArchivo();
 };
 
 
