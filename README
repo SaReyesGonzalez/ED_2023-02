@@ -1,0 +1,77 @@
+Orden de compilacion:
+
+1. Usuario
+2. Software
+3. * TODAS LAS CLASES HIJAS DE SOFTWARE *
+4. Main
+
+
+
+- Objetos:
+
+admin: { nombre: "Admin"; contraseña: "admin"; edad: "0"; correo: "admin@admin.cl"; log: "true" }
+kid1: { nombre: "Jose"; contraseña: "123"; edad: "6"; correo: ""; log: "false" }
+kid2: { nombre: "Carla"; contraseña: "123"; edad: "9"; correo: ""; log: "false" }
+kid3: { nombre: "Clara"; contraseña: "123"; edad: "13"; correo: ""; log: "false" }
+kid4: { nombre: "Carlos"; contraseña: "123"; edad: "16"; correo: ""; log: "false" }
+user1: { nombre: "Sebastian"; contraseña: "123123"; edad: "22"; correo: "sebastian@email.cl"; log: "false" }
+user2: { nombre: "Antonio"; contraseña: "123123"; edad: "18"; correo: "antonio@email.cl"; log: "false" }
+user3: { nombre: "Luciano"; contraseña: "123123"; edad: "22"; correo: "luciano@email.cl"; log: "false" }
+user4: { nombre: "Andres"; contraseña: "123123"; edad: "25"; correo: "andres@email.cl"; log: "false" }
+user5: { nombre: "Tatiana"; contraseña: "123123"; edad: "28"; correo: "tatiana@email.cl"; log: "false" }
+user6: { nombre: "Daniela"; contraseña: "123123"; edad: "30"; correo: "daniela@email.cl"; log: "false" }
+user7: { nombre: "Anton"; contraseña: "123123"; edad: "30"; correo: "anton@email.cl"; log: "false" }
+user8: { nombre: "Lucas"; contraseña: "123123"; edad: "26"; correo: "lucas@email.cl"; log: "false" }
+user9: { nombre: "Lola"; contraseña: "123123"; edad: "21"; correo: "lola@email.cl"; log: "false" }
+user10: { nombre: "Mauricio"; contraseña: "123123"; edad: "19"; correo: "mauricio@email.cl"; log: "false" }
+
+
+game1: { nombre: "Doom Eternal"; developer: "id Software"; pg: "M"; precio: 0; genero: "FPS" }
+game2: { nombre: "Call of Duty"; developer: "Infinity Ward"; pg: "M"; precio: 0; genero: "FPS" }
+game3: { nombre: "World of Warcraft"; developer: "Blizzard"; pg: "T"; precio: 0; genero: "MMO" }
+game4: { nombre: "Final Fantasy XIV"; developer: "Square Enix"; pg: "T"; precio: 0; genero: "MMO" }
+game5: { nombre: "Portal"; developer: "Valve"; pg: "T"; precio: 0; genero: "PUZZLE" }
+game6: { nombre: "Portal 2"; developer: "Valve"; pg: "E"; precio: 0; genero: "PUZZLE" }
+game7: { nombre: "Resident Evil Village"; developer: "Capcom"; pg: "M"; precio: 0; genero: "Survival horror" }
+game8: { nombre: "Silent Hill 2"; developer: "Konami"; pg: "M"; precio: 0; genero: "Survival horror" }
+game9: { nombre: "Super Mario Odyssey"; developer: "Nintendo"; pg: "E"; precio: 0; genero: "Plataformas" }
+game10: { nombre: "Hollow Knight"; developer: "Team Cherry"; pg: "E"; precio: 0; genero: "Plataformas" }
+game11: { nombre: "The Legend of Zelda"; developer: "Nintendo"; pg: "E"; precio: 0; genero: "Aventuras" }
+game12: { nombre: "Uncharted 4"; developer: "Naughty Dog"; pg: "T"; precio: 0; genero: "Aventuras" }
+game13: { nombre: "Mortal Kombat 11"; developer: "NetherRealm Studios"; pg: "M"; precio: 0; genero: "Peleas" }
+game14: { nombre: "Super Smash Bros"; developer: "Nintendo"; pg: "E"; precio: 0; genero: "Peleas" }
+game15: { nombre: "League of Legends"; developer: "Riot Games"; pg: "T"; precio: 0; genero: "MOBA" }
+game16: { nombre: "Smite"; developer: "Hi-Rez"; pg: "T"; precio: 0; genero: "MOBA" }
+game17: { nombre: "FIFA 22"; developer: "EA Vancouver"; pg: "E"; precio: 0; genero: "Deportes" }
+game18: { nombre: "NBA 2K22"; developer: "Visual Concepts"; pg: "E"; precio: 0; genero: "Deportes" }
+game19: { nombre: "Hearthstone"; developer: "Blizzard"; pg: "T"; precio: 0; genero: "Cartas" }
+game20: { nombre: "Legends of Runeterra"; developer: "Riot Games"; pg: "T"; precio: 0; genero: "Cartas" }
+
+
+ofi1: { nombre: "Excel"; developer: "Microsoft"; pg: "E"; precio: 0; cantArchivos: 0 }
+ofi2: { nombre: "Word"; developer: "Microsoft"; pg: "E"; precio: 0; cantArchivos: 0 }
+ofi3: { nombre: "PowerPoint"; developer: "Microsoft"; pg: "E"; precio: 0; cantArchivos: 0 }
+ofi4: { nombre: "GDocs"; developer: "Google"; pg: "E"; precio: 0; cantArchivos: 0 }
+ofi5: { nombre: "GSlides"; developer: "Google"; pg: "E"; precio: 0; cantArchivos: 0 }
+
+
+prod1: { nombre: "Adobe Premiere Pro"; developer: "Adobe Inc"; pg: "M"; precio: 0; tipo: "Video" }
+prod2: { nombre: "Ableton Live"; developer: "Ableton AG"; pg: "M"; precio: 0; tipo: "Música" }
+prod3: { nombre: "OBS Studio"; developer: "Open Source"; pg: "M"; precio: 0; tipo: "Streaming" }
+prod4: { nombre: "Adobe Photoshop"; developer: "Adobe Inc"; pg: "M"; precio: 0; tipo: "Fotos" }
+
+
+nav1: { nombre: "Mozilla Firefox"; developer: "Mozilla Corp"; pg: "E"; precio: 0 }
+nav2: { nombre: "Opera"; developer: "Opera Software AS"; pg: "E"; precio: 0 }
+
+
+seg1: { nombre: "CryptoLocker"; developer: "Desconocido"; pg: "ADMIN"; precio: 0; tipo: "Ransomware" }
+seg2: { nombre: "FlexiSPY"; developer: "FlexiSPY Ltd."; pg: "ADMIN"; precio: 0; tipo: "Spyware" }
+seg3: { nombre: "Andromeda"; developer: "Desconocido"; pg: "ADMIN"; precio: 0; tipo: "Botnets" }
+seg4: { nombre: "Hacking Team RCS"; developer: "Hacking Team"; pg: "ADMIN"; precio: 0; tipo: "Rootkits" }
+seg5: { nombre: "SQL Slammer"; developer: "Desconocido"; pg: "ADMIN"; precio: 0; tipo: "Gusanos" }
+seg6: { nombre: "DarkTequila"; developer: "Desconocido"; pg: "ADMIN"; precio: 0; tipo: "Troyanos" }
+
+
+social1: { nombre: "Facebook"; developer: "Facebook INC."; pg: "E"; precio: 0 }
+social2: { nombre: "Instagram"; developer: "Facebook INC."; pg: "E"; precio: 0 }
